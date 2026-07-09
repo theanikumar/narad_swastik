@@ -9,6 +9,10 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 # Copy your project files
 COPY . /var/www/html/
 
+# FIX PERMISSIONS: Give Apache ownership of the files
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
+
 # Enable Apache URL rewriting
 RUN a2enmod rewrite
 

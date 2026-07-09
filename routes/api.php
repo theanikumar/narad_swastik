@@ -10,11 +10,19 @@ $uri    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Strip the script's base directory path (handles subdirectory deployment)
 $basePath = dirname($_SERVER['SCRIPT_NAME']);
-$path = preg_replace('#^' . preg_quote($basePath, '#') . '#', '', $uri);
+// Only strip base path if it's an actual directory, not the root slash
+if ($basePath !== '/' && $basePath !== '\\') {
+    $path = preg_replace('#^' . preg_quote($basePath, '#') . '#', '', $uri);
+} else {
+    $path = $uri;
+}
 
-// Strip /api/v1 prefix to match route definitions
-$path = preg_replace('#^/api/v1#', '', $path);
+// Strip /api/v1 prefix to match route definitions (made the leading slash optional with /?)
+$path = preg_replace('#^/?api/v1#', '', $path);
 $path = '/' . trim($path, '/');
+
+// Route map: [method, path, handler]
+// ... (keep all your routes exactly as they are below this line)
 
 // Route map: [method, path, handler]
 $routes = [

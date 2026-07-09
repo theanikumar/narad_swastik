@@ -1,0 +1,18 @@
+[08-Jul-2026 16:24:06 Asia/Kolkata] PHP Fatal error:  Uncaught TypeError: trim(): Argument #1 ($string) must be of type string, int given in D:\NARAD\Clients\Swastik\api\app\Helpers\Validator.php:67
+Stack trace:
+#0 D:\NARAD\Clients\Swastik\api\app\Helpers\Validator.php(67): trim(1)
+#1 D:\NARAD\Clients\Swastik\api\app\Controllers\UserManagementController.php(58): App\Helpers\Validator->integer('role_id')
+#2 D:\NARAD\Clients\Swastik\api\routes\api.php(84): App\Controllers\UserManagementController->store(Array)
+#3 D:\NARAD\Clients\Swastik\api\public\index.php(61): require('D:\\NARAD\\Client...')
+#4 {main}
+  thrown in D:\NARAD\Clients\Swastik\api\app\Helpers\Validator.php on line 67
+[08-Jul-2026 21:37:33 Asia/Kolkata] Uncaught Error: Class "App\Controllers\AttendanceRepository" not found in D:\xampp2\htdocs\narad\swastik\api\app\Controllers\DashboardController.php:140
+[08-Jul-2026 21:37:34 Asia/Kolkata] PHP Notice:  file_get_contents(): Read of 8230 bytes failed with errno=13 Permission denied in D:\xampp2\htdocs\narad\swastik\api\app\Middleware\RateLimitMiddleware.php on line 31
+[08-Jul-2026 21:40:36 Asia/Kolkata] PHP Notice:  file_get_contents(): Read of 8192 bytes failed with errno=13 Permission denied in D:\xampp2\htdocs\narad\swastik\api\app\Middleware\RateLimitMiddleware.php on line 31
+[08-Jul-2026 21:40:36 Asia/Kolkata] Uncaught Error: Class "App\Controllers\AttendanceRepository" not found in D:\xampp2\htdocs\narad\swastik\api\app\Controllers\DashboardController.php:140
+[08-Jul-2026 21:40:37 Asia/Kolkata] Uncaught Error: Class "App\Controllers\AttendanceRepository" not found in D:\xampp2\htdocs\narad\swastik\api\app\Controllers\DashboardController.php:140
+[08-Jul-2026 21:40:38 Asia/Kolkata] Uncaught Error: Class "App\Controllers\AttendanceRepository" not found in D:\xampp2\htdocs\narad\swastik\api\app\Controllers\DashboardController.php:140
+[08-Jul-2026 21:40:39 Asia/Kolkata] Uncaught Error: Class "App\Controllers\AttendanceRepository" not found in D:\xampp2\htdocs\narad\swastik\api\app\Controllers\DashboardController.php:140
+[08-Jul-2026 21:50:53 Asia/Kolkata] Uncaught Error: Class "App\Controllers\AttendanceRepository" not found in D:\xampp2\htdocs\narad\swastik\api\app\Controllers\DashboardController.php:140
+[08-Jul-2026 21:51:57 Asia/Kolkata] Uncaught Error: Class "App\Controllers\AttendanceRepository" not found in D:\xampp2\htdocs\narad\swastik\api\app\Controllers\DashboardController.php:140
+[08-Jul-2026 22:33:46 Asia/Kolkata] Uncaught Error: Class "App\Controllers\AttendanceRepository" not found in D:\xampp2\htdocs\narad\swastik\api\app\Controllers\DashboardController.php:140

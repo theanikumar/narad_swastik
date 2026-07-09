@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS `users` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(100) NOT NULL UNIQUE,
+    `phone` VARCHAR(20) DEFAULT NULL,
+    `password_hash` VARCHAR(255) NOT NULL,
+    `role_id` INT UNSIGNED NOT NULL,
+    `status` ENUM('active', 'inactive', 'suspended') NOT NULL DEFAULT 'active',
+    `last_login_at` TIMESTAMP NULL DEFAULT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (`role_id`) REFERENCES `roles`(`id`) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
